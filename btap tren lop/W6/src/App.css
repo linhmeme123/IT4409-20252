@@ -1,0 +1,103 @@
+.app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a; /* nền tối đẹp hơn */
+  color: #e5e7eb;
+}
+
+.title {
+  color: #60a5fa; /* xanh sáng */
+  font-weight: bold;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.search-form input {
+  background: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+
+.search-form input::placeholder {
+  color: #94a3b8;
+}
+
+.search-form button {
+  background: #3b82f6;
+  color: white;
+  font-weight: 500;
+}
+
+.search-form button:hover {
+  background: #2563eb;
+}
+
+.loading {
+  color: #60a5fa;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.result-box {
+  background: #ffffff;
+  color: #1f2937; /* chữ đậm hơn */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.student-info {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8fafc; /* nền nhẹ */
+  border-radius: 10px;
+  border-left: 5px solid #3b82f6; /* điểm nhấn xanh */
+}
+
+.student-info h2 {
+  color: #1e3a8a; /* xanh đậm */
+  margin-bottom: 12px;
+}
+
+.student-info p {
+  font-size: 18px;
+  color: #374151; /* xám đậm */
+  margin: 6px 0;
+}
+
+.student-info strong {
+  color: #111827;
+}
+.result-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.result-box h2 {
+  color: #1e3a8a; /* xanh đậm */
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.result-box th {
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
+}
+
+.result-box td {
+  color: #374151;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<body>
+    <h2>Demo Hello World: Async/Await</h2>
+    <button onclick="runNoAwait()">1. KHÔNG có Await</button>
+    <button onclick="runWithAwait()">2. CÓ Await</button>
+    
+    <p>Kết quả: <strong id="output">...</strong></p>
+
+    <script>
+       
+        function fetchMessage() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Hello World! (Đã xong)");
+                }, 2000);
+            });
+        }
+
+       
+        async function runNoAwait() {
+            const message = fetchMessage(); 
+            document.getElementById('output').innerText = message;
+            console.log("Đã chạy xong hàm NoAwait: " + message);
+        }
+
+        
+        async function runWithAwait() {
+            document.getElementById('output').innerText = "Đang đợi...";
+            const message = await fetchMessage(); 
+            document.getElementById('output').innerText = message;
+            console.log("Đã chạy xong hàm WithAwait: " + message);
+        }
+    </script>
+</body>
+</html>
+Viết cho Linhmeme

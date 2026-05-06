@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bài 2 + Bài 4</title>
+</head>
+<body>
+  <h1>Bài tập JavaScript</h1>
+
+  <!-- ===== BÀI 2 ===== -->
+  <h2>Bài 2: Tính điểm trung bình</h2>
+  <button onclick="tinhDiemTB()">Tính điểm trung bình</button>
+  <p id="ketQua"></p>
+
+  <!-- ===== BÀI 4 ===== -->
+  <h2>Bài 4: Thêm mục vào danh sách</h2>
+
+  <input type="text" id="itemInput" placeholder="Nhập nội dung..." />
+  <button onclick="themItem()">Thêm</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    // ===== BÀI 2 =====
+    function tinhDiemTB() {
+      const students = [
+        { name: "An", score: 8.5 },
+        { name: "Bình", score: 7.0 },
+        { name: "Chi", score: 9.0 },
+        { name: "Dũng", score: 6.5 },
+        { name: "Lan", score: 8.0 }
+      ];
+
+      const valid = students.filter(s =>
+        typeof s.score === "number" && !Number.isNaN(s.score)
+      );
+
+      const scores = valid.map(s => s.score);
+
+      const total = scores.reduce((sum, s) => sum + s, 0);
+
+      const avg = scores.length > 0 ? total / scores.length : 0;
+
+      document.getElementById("ketQua").textContent =
+        "Điểm trung bình: " + avg.toFixed(2);
+    }
+
+    // ===== BÀI 4 =====
+    function themItem() {
+      const input = document.getElementById("itemInput");
+      const text = input.value.trim();
+
+      if (text === "") {
+        alert("Vui lòng nhập nội dung!");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = text;
+
+      document.getElementById("itemList").appendChild(li);
+
+      input.value = "";
+      input.focus();
+    }
+  </script>
+</body>
+</html>

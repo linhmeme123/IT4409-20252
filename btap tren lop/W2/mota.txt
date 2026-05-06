@@ -1,0 +1,6 @@
+Trang web được tạo bằng ngôn ngữ HTML cơ bản.
+Trang gồm các phần chính là header, phần nội dung và footer.
+Trong phần nội dung có hiển thị logo Google và một form tìm kiếm.
+Form sử dụng phương thức GET và gửi dữ liệu đến trang tìm kiếm của Google.
+Người dùng có thể nhập từ khóa vào ô tìm kiếm và nhấn Google Search để thực hiện tìm kiếm.
+Ngoài ra trang còn hiển thị thông tin sinh viên và ảnh chân dung.

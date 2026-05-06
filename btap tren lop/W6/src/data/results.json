@@ -1,0 +1,53 @@
+[
+    {
+      "mssv": "20235135",
+      "scores": [
+        {
+          "id": "MATH101",
+          "midterm": 8,
+          "fullterm": 8.5,
+          "semester": "HK1-2024"
+        },
+        {
+          "id": "PHY101",
+          "midterm": 7,
+          "fullterm": 7.5,
+          "semester": "HK1-2024"
+        }
+      ]
+    },
+    {
+      "mssv": "SV002",
+      "scores": [
+        {
+          "id": "ENG101",
+          "midterm": 8.5,
+          "fullterm": 9,
+          "semester": "HK1-2024"
+        },
+        {
+          "id": "CS101",
+          "midterm": 7.5,
+          "fullterm": 8,
+          "semester": "HK1-2024"
+        }
+      ]
+    },
+    {
+      "mssv": "SV003",
+      "scores": [
+        {
+          "id": "DB101",
+          "midterm": 6.5,
+          "fullterm": 7.5,
+          "semester": "HK1-2024"
+        },
+        {
+          "id": "WEB101",
+          "midterm": 9,
+          "fullterm": 9.5,
+          "semester": "HK1-2024"
+        }
+      ]
+    }
+  ]

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Trang thông tin lịch học</title>
+
+<!-- liên kết CSS -->
+<style>
+    html, body{
+    height:100%;
+    }
+    
+    body{
+    font-family: Arial;
+    margin:0;
+    background:#f4f6fa;
+    
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    }
+    
+    header{
+    background: linear-gradient(to right,#6a11cb,#2575fc);
+    color:white;
+    text-align:center;
+    padding:20px;
+    }
+    
+    .container{
+    
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    gap:30px;
+    padding:30px;
+    flex:1;
+    align-items:start;
+    
+    }
+    
+    .profile{
+    
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    
+    box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+    
+    }
+    
+    .profile img{
+    
+    width:150px;
+    border-radius:50%;
+    margin-bottom:15px;
+    
+    }
+
+
+    table{
+    
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    
+    box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+    
+    }
+    
+    th, td{
+    
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+    
+    }
+    
+    th{
+    
+    background:#2575fc;
+    color:white;
+    
+    }
+    
+    tr:hover{
+    background:#f1f1f1;
+    }
+    
+    .description{
+    margin-top:15px;
+    }
+    
+    footer{
+    
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:10px;
+    
+    }
+    
+    @media (max-width:768px){
+    
+    .container{
+    grid-template-columns:1fr;
+    }
+    
+    .profile img{
+    width:180px;
+    }
+    
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+<h1>Trang thông tin lịch học</h1>
+</header>
+
+<div class="container">
+
+    <div class="profile">
+
+        <h2>Thông tin sinh viên</h2>
+
+        <img src="6D14EE3C-5631-40CE-A541-3CA9484E664E_1_105_c.jpeg"
+        alt="Ảnh chân dung">
+
+        <p><b>Họ tên:</b> Hoàng Thùy Linh</p>
+        <p><b>MSSV:</b> 20235135</p>
+        <p><b>Lớp:</b> IT1-07</p>
+
+    </div>
+
+
+    <div class="schedule">
+
+        <table>
+
+        <caption><b>Thời khóa biểu học kỳ</b></caption>
+
+        <tr>
+            <th>Tên môn học</th>
+            <th>Tên giảng viên</th>
+            <th>Ngày giờ học</th>
+            <th>Phòng học</th>
+        </tr>
+
+        <tr>
+            <td>Các hệ thống phân tán và ứng dụng</td>
+            <td>Đỗ Tiến Dũng</td>
+            <td>Thứ 2 - 6:45</td>
+            <td>TC-107</td>
+        </tr>
+
+        <tr>
+            <td>Học sâu và ứng dụng</td>
+            <td>Nguyễn Hồng Quang</td>
+            <td>Thứ 2 - 9:20</td>
+            <td>TC-307</td>
+        </tr>
+
+        <tr>
+            <td>Nhập môn các phương pháp tối ưu</td>
+            <td>Phạm Thị Hoài</td>
+            <td>Thứ 2 - 12:30</td>
+            <td>TC-408</td>
+        </tr>
+
+        <tr>
+            <td>Nhập môn an toàn thông tin</td>
+            <td>Tống Văn Vạn</td>
+            <td>Thứ 3 - 12:30</td>
+            <td>TC-312</td>
+        </tr>
+
+        <tr>
+            <td>Công nghệ Web và dịch vụ trực tuyến</td>
+            <td>Đỗ Bá Lâm</td>
+            <td>Thứ 4 - 6:45</td>
+            <td>D9-306</td>
+        </tr>
+
+        <tr>
+            <td>Phát triển ứng dụng đa nền tảng</td>
+            <td>Nguyễn Tiến Thành</td>
+            <td>Thứ 4 - 12:30</td>
+            <td>D7-307</td>
+        </tr>
+
+        <tr>
+            <td>Quản trị dự án CNTT</td>
+            <td>Lê Đức Trung</td>
+            <td>Thứ 6 - 12:30</td>
+            <td>D9-305</td>
+        </tr>
+
+        </table>
+
+        <p class="description">
+        Đây là thời khóa biểu học tập của tôi trong học kỳ này.
+        Lịch học khá hợp lý và giúp tôi có đủ thời gian để học tập
+        cũng như nghiên cứu thêm các môn yêu thích.
+        </p>
+
+    </div>
+
+</div>
+
+
+<footer>
+<p>Ngày tạo: 11/03/2026 | Email: linh166105thcs@gmail.com</p>
+</footer>
+
+</body>
+</html>
