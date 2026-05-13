@@ -10,59 +10,137 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
-      /* TODO: CSS container, table, button, modal, responsive */
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
+        min-height: 100vh;
+        padding: 32px 16px;
+        color: #4a1d33;
+        background:
+          radial-gradient(circle at top left, rgba(255, 182, 211, 0.65), transparent 34%),
+          linear-gradient(135deg, #fff1f7 0%, #ffe1ee 48%, #f8c7dc 100%);
       }
 
       .container {
-        width: 80%;
-        margin: 20px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: min(1080px, 100%);
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.88);
+        padding: 28px;
+        border: 1px solid rgba(255, 136, 183, 0.35);
+        border-radius: 28px;
+        box-shadow: 0 24px 70px rgba(190, 45, 103, 0.18);
+        backdrop-filter: blur(10px);
       }
 
       h1 {
+        margin: 0 0 24px;
         text-align: center;
+        color: #be2d67;
+        font-size: 32px;
+        font-weight: 800;
       }
 
       table {
         width: 100%;
-        border-collapse: collapse;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0;
         margin: 20px 0;
+        overflow: hidden;
+        border: 1px solid #f5bfd5;
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 0 12px 28px rgba(190, 45, 103, 0.08);
       }
 
       th,
       td {
-        padding: 12px 15px;
-        border: 1px solid #ddd;
+        padding: 14px 16px;
+        border-bottom: 1px solid #f8d3e2;
         text-align: left;
+        vertical-align: middle;
+        overflow-wrap: anywhere;
       }
 
       th {
-        background: #f4f4f4;
+        background: #ffd5e6;
+        color: #8d1748;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      tbody tr:hover {
+        background: #fff6fa;
+      }
+
+      .col-index {
+        width: 72px;
+      }
+
+      .col-name {
+        width: 25%;
+      }
+
+      .col-email {
+        width: 30%;
+      }
+
+      .col-address {
+        width: 25%;
+      }
+
+      .col-actions {
+        width: 220px;
+        text-align: center;
+      }
+
+      .actions {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: nowrap;
       }
 
       button {
-        padding: 10px 15px;
+        min-width: 72px;
+        padding: 10px 16px;
         border: none;
-        border-radius: 5px;
+        border-radius: 999px;
         cursor: pointer;
         margin: 4px;
+        color: #8d1748;
+        background: #ffe4ef;
+        font-weight: 700;
+        white-space: nowrap;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      }
+
+      button:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(190, 45, 103, 0.16);
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.45;
       }
 
       .btn-primary {
-        background: #007bff;
+        background: linear-gradient(135deg, #e83e8c, #be2d67);
         color: #fff;
+        box-shadow: 0 12px 26px rgba(190, 45, 103, 0.22);
       }
 
       .btn-danger {
-        background: #dc3545;
+        background: #ff6b9d;
         color: #fff;
       }
 
@@ -75,21 +153,27 @@
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 60px;
+        background-color: rgba(91, 18, 52, 0.35);
+        padding: 48px 16px;
       }
 
       .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
+        background-color: #fff;
+        margin: 0 auto;
+        padding: 26px;
+        border: 1px solid #f5bfd5;
+        border-radius: 24px;
+        width: min(560px, 100%);
+        box-shadow: 0 28px 80px rgba(91, 18, 52, 0.24);
+      }
+
+      .modal-content h2 {
+        margin: 0 0 18px;
+        color: #be2d67;
       }
 
       .close {
-        color: #aaa;
+        color: #be2d67;
         float: right;
         font-size: 28px;
         font-weight: bold;
@@ -97,17 +181,28 @@
 
       .close:hover,
       .close:focus {
-        color: black;
+        color: #8d1748;
         text-decoration: none;
         cursor: pointer;
       }
 
       input,
       select {
-        padding: 8px;
+        padding: 12px 14px;
         margin: 6px 0 12px;
         width: 100%;
+        border: 1px solid #f0a9c6;
+        border-radius: 14px;
+        background: #fff9fc;
+        color: #4a1d33;
         box-sizing: border-box;
+        outline: none;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #e83e8c;
+        box-shadow: 0 0 0 4px rgba(232, 62, 140, 0.14);
       }
 
       .pagination {
@@ -115,6 +210,8 @@
         align-items: center;
         gap: 8px;
         margin-top: 16px;
+        color: #8d1748;
+        font-weight: 700;
       }
 
       .pagination select {
@@ -129,10 +226,42 @@
       }
 
       .error {
-        color: #dc3545;
+        color: #c21f56;
         display: block;
         margin-top: -8px;
         margin-bottom: 8px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      label {
+        color: #8d1748;
+        font-weight: 700;
+      }
+
+      @media (max-width: 720px) {
+        body {
+          padding: 16px 10px;
+        }
+
+        .container {
+          padding: 18px;
+          border-radius: 20px;
+        }
+
+        h1 {
+          font-size: 26px;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+        }
+
+        .pagination {
+          align-items: stretch;
+          flex-wrap: wrap;
+        }
       }
     </style>
   </head>
@@ -140,7 +269,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const API_URL = "http://localhost:3001/api/users";
+      const API_URL = "/api/users";
 
       function App() {
         const [users, setUsers] = React.useState([]);
@@ -283,21 +412,23 @@
           <table>
             <thead>
               <tr>
-                <th>STT</th>
-                <th>Tên</th>
-                <th>Email</th>
-                <th>Hành động</th>
+                <th className="col-index">STT</th>
+                <th className="col-name">Tên</th>
+                <th className="col-email">Email</th>
+                <th className="col-address">Địa chỉ</th>
+                <th className="col-actions">Hành động</th>
               </tr>
             </thead>
             <tbody>
               {users.map((user, index) => (
                 <tr key={user._id}>
-                  <td>{(page - 1) * limit + index + 1}</td>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>
+                  <td className="col-index">{(page - 1) * limit + index + 1}</td>
+                  <td className="col-name">{user.name}</td>
+                  <td className="col-email">{user.email || "-"}</td>
+                  <td className="col-address">{user.address || "-"}</td>
+                  <td className="col-actions actions">
                     <button onClick={() => onEdit(user)}>Sửa</button>
-                    <button onClick={() => onDelete(user._id)}>Xóa</button>
+                    <button className="btn-danger" onClick={() => onDelete(user._id)}>Xóa</button>
                   </td>
                 </tr>
               ))}
